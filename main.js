@@ -21,12 +21,20 @@ function addUser(newUser){
     .catch(error => console.error(error))
 }
 
-const newUser = {
-    name: "João",
-    age: 19,
-    city: "São Paulo"
+function getUsers(){
+    fetch(`${url}/3`)
+    .then(response => response.json())
+    .then(data => {
+        userName.textContent = data.name
+    })
 }
 
-addUser(newUser)
+const newUser = {
+    name: "Laly",
+    age: 19,
+    city: "Tokyo"
+}
 
-getUser()
+//addUser(newUser)
+getUsers()
+//getUser()
